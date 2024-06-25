@@ -4,15 +4,7 @@
     <meta charset="utf-8" />
     <meta
       name="description"
-      content="Unveiling an empty street from crowded observations captured by in-car cameras is crucial for autonomous driving. However, removing all temporary static objects, such as stopped vehicles and standing pedestrians, presents a significant challenge. Unlike object-centric 3D inpainting, which relies on thorough observation in a small scene, street scenes involve long trajectories that differ from previous 3D inpainting tasks. The camera-centric moving environment of captured videos further complicates the task due to the limited degree and time duration of object observation.
-      To address these obstacles, we introduce StreetUnveiler to reconstruct an empty street. 
-      StreetUnveiler learns a 3D representation of the empty street from crowded observations.
-      Our representation is based on the hard-label semantic 2D Gaussian Splatting (2DGS) for its scalability and ability to identify Gaussians to be removed.
-      We inpaint rendered image after removing unwanted Gaussians to provide pseudo-labels and subsequently re-optimize the 2DGS.
-      Given its temporal continuous movement, we divide the empty street scene into observed, partial-observed, and unobserved regions, which we propose to locate through a rendered alpha map.
-      This decomposition helps us to minimize the regions that need to be inpainted.
-      To enhance the temporal consistency of the inpainting, we introduce a novel time-reversal framework to inpaint frames in reverse order and use later frames as references for earlier frames to fully utilize the long-trajectory observations.
-      Our experiments conducted on the street scene dataset successfully reconstructed a 3D representation of the empty street. The mesh representation of the empty street can be extracted for further applications."
+      content="We achieve fast reconstruction of clothed human avatars with PBR properties from a monocular video. Our approach involves taking a monocular video and initial human pose and shape as input to estimate dynamic clothed humans’ PBR properties, including geometry and materials. Leveraging a Gaussian-surfel-based representation, our method enables fast training and rendering processes. By utilizing the estimated PBR properties, we can not only deform the avatars into different poses but also render them with realistic lighting conditions, allowing for versatile and visually appealing outputs."
     />
     <meta name="keywords" content="Empty Street Reconstruction, 3D inpainting" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -294,7 +286,7 @@
         const updateVideoSource = (source, name) => {
           video.src = `./static/videos/main_comp/${source}`;
           // original_video.src = `./static/videos/Experiment/scene${sceneNumber}/${source}`;
-          text.innerHTML = `${name}&nbsp;&nbsp;VS&nbsp;&nbsp;Ours`;
+          text.innerHTML = `Baselines&nbsp;&nbsp;VS&nbsp;&nbsp;Ours`;
           lastFile = source;
           lastText = name;
           // pathText.innerHTML = `File path: <strong>"./static/videos/Experiment/scene${sceneNumber}/${source}"</strong>`;
@@ -407,7 +399,7 @@
 
     <div class="columns is-centered has-text-centered" id="video">
       <div class="column is-four-fifths">
-        <h2 class="title is-2">Demo</h2>
+        <h2 class="title is-2">Novel lighing results on zju mocap dataset</h2>
         <!-- <video class="video" width=100% id="original" loop playsinline autoplay muted src="./static/videos/demo.mp4" onplay="resizeAndPlay(this)"></video> --> 
 
         <video  loop playsinline autoplay muted>
